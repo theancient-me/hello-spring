@@ -31,7 +31,7 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         password: ${{ secrets.SSH_PASSWORD }}
         source: "build/libs/api-0.0.1-SNAPSHOT.jar"
-        target: "hello-spring"
+        target: "bankjirapan"
     - name: Run a script on remote server (start the application)
       uses: garygrossgarten/github-action-ssh@release
       with:
