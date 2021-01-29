@@ -33,10 +33,9 @@ jobs:
         source: "build/libs/api-0.0.1-SNAPSHOT.jar"
         target: "bankjirapan"
     - name: Run a script on remote server (start the application)
-      uses: garygrossgarten/github-action-ssh@release
+      uses: fifsky/ssh-action@master
       with:
         command: |
-            cd /home/bankjirapan/hello-spring/build/libs
             kill $(pidof java)
             sudo systemctl start api
         host: ${{ secrets.HOST }}
