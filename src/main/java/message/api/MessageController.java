@@ -15,6 +15,12 @@ public class MessageController {
     List<MessageResponse> messageCount = new ArrayList<>();
     public MessageController(){
     }
+    
+    @GetMapping("/")
+    public String getIndex(){
+        return "Hi"
+    }
+
     @GetMapping("/message")
     public List<MessageResponse> getMessage(){
         return messageCount;

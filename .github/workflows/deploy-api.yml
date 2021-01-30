@@ -27,7 +27,7 @@ jobs:
     - name: Deploy to server with github
       if: always()
       uses: fifsky/ssh-action@master
-      with:
+      with: 
           command: |
             cd 
             ls
