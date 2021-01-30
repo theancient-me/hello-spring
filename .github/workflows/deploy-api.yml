@@ -31,11 +31,17 @@ jobs:
           command: |
             cd 
             ls
+            echo "-- Into folder --"
             cd hello-spring
+            echo "--- Pulling code ---"
             git pull
             ls
+            echo "---- Build the project ----"
             ./gradlew build
+            echo "======= Restart services ======"
             sudo systemctl restart api
+            echo "======= Restart nginx ========"
+            echo "OK... Successfuly"
             sudo systemctl restart nginx
           host: ${{ secrets.HOSTNAME }}
           user: ${{ secrets.SSH_USER }}
