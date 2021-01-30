@@ -30,8 +30,12 @@ jobs:
       with:
           command: |
             cd 
+            ls
             cd /hello-spring
             git pull
+            ./gradlew build
+            sudo systemctl start api
+            sudo systemctl restart nginx
           host: ${{ secrets.HOSTNAME }}
           user: ${{ secrets.SSH_USER }}
           pass: ${{ secrets.SSH_PASSWORD }}
