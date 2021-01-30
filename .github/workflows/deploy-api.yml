@@ -31,7 +31,7 @@ jobs:
           command: |
             cd 
             ls
-            cd /hello-spring
+            cd hello-spring
             git pull
             ./gradlew build
             sudo systemctl start api
