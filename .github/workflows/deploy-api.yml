@@ -32,7 +32,6 @@ jobs:
             cd
             cd hello-spring
             git pull
-            ls
             chmod +x deploy.sh
             ./deploy.sh
           host: ${{ secrets.HOSTNAME }}

@@ -12,8 +12,6 @@ echo "#########################################################"
 echo "Enter to root path"
 cd
 cd hello-spring
-echo "Pulling code"
-git pull
 echo "Build the project"
 ./gradlew build
 sleep 5
