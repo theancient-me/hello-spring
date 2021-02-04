@@ -22,15 +22,17 @@ jobs:
         java-version: 11.0
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Test build with Gradle
-      run: ./gradlew build
+    # - name: Test build with Gradle
+    #   run: ./gradlew build
     - name: Deploy to server with github
       if: always()
       uses: fifsky/ssh-action@master
       with: 
           command: |
             cd
+            ls
             cd hello-spring
+            ls
             chmod +x deploy.sh
             ./deploy.sh
           host: ${{ secrets.HOSTNAME }}
