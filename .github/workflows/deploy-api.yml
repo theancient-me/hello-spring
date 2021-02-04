@@ -30,8 +30,8 @@ jobs:
       with: 
           command: |
             cd
-            ls
             cd hello-spring
+            git pull
             ls
             chmod +x deploy.sh
             ./deploy.sh
