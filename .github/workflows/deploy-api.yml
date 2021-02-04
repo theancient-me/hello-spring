@@ -29,20 +29,10 @@ jobs:
       uses: fifsky/ssh-action@master
       with: 
           command: |
-            cd 
-            ls
-            echo "-- Into folder --"
+            cd
             cd hello-spring
-            echo "--- Pulling code ---"
-            git pull
-            ls
-            echo "---- Build the project ----"
-            ./gradlew build
-            echo "======= Restart services ======"
-            sudo systemctl restart api
-            echo "======= Restart nginx ========"
-            echo "OK... Successfuly"
-            sudo systemctl restart nginx
+            chmod +x deploy.sh
+            ./deploy.sh
           host: ${{ secrets.HOSTNAME }}
           user: ${{ secrets.SSH_USER }}
           pass: ${{ secrets.SSH_PASSWORD }}
